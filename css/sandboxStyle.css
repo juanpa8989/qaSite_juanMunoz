@@ -1,0 +1,154 @@
+body {
+    background-color: black;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: minmax(auto, auto);
+    grid-template-areas:
+        'titulo exp2'
+        'exp1 exp2';
+
+}
+
+.miniContenedor-1 {
+    background-color: rgb(85, 111, 14);
+    height: 60px;
+    grid-area: titulo;
+}
+.miniContenedor-2 {
+    background-color: rgb(37, 107, 169);
+    grid-area: exp2;
+    
+}
+.miniContenedor-3 {
+    background-color: rgb(26, 179, 51);
+    grid-area: exp1;
+
+    
+}
+.miniContenedor-4 {
+    background-color: rgb(34, 25, 111);
+}
+.miniContenedor-5 {
+    background-color: rgb(124, 32, 166);
+}
+
+/*This is the CSS for the 3D carousel taken from hoangtran at CodePen.*/
+
+  
+  html,
+  body {
+    height: 100%;
+    background-color: #111;
+ 
+  }
+  
+  body {
+    overflow: hidden;
+    display: flex;
+    background-color: #111;
+    -webkit-perspective: 1000px;
+            perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+  }
+  
+  #drag-container, #spin-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: rotateX(-10deg);
+            transform: rotateX(-10deg);
+  }
+  
+  #drag-container img, #drag-container video {
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    font-size: 50px;
+    text-align: center;
+    -webkit-box-shadow: 0 0 8px #fff;
+            box-shadow: 0 0 8px #fff;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+  }
+  
+  #drag-container img:hover, #drag-container video:hover {
+    -webkit-box-shadow: 0 0 15px #fffd;
+            box-shadow: 0 0 15px #fffd;
+    -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+  }
+  
+  #drag-container p {
+    font-family: Serif;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+            transform: translate(-50%,-50%) rotateX(90deg);
+    color: #fff;
+  }
+  
+  #ground {
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%) rotateX(90deg);
+            transform: translate(-50%,-50%) rotateX(90deg);
+    background: -webkit-radial-gradient(center center, farthest-side , #9993, transparent);
+  }
+  
+  #music-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  @-webkit-keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  
+  @keyframes spin {
+    from{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    } to{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+  @-webkit-keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
+  @keyframes spinRevert {
+    from{
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    } to{
+      -webkit-transform: rotateY(0deg);
+              transform: rotateY(0deg);
+    }
+  }
